@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style>
+        body{
+            background: url("/static/assets/images/banner-bg.png") 100% 0 no-repeat fixed;
+            background-color: black;
+            
+        }
+ 
+    </style>
+  
+
+     
+   </head>
+   <body>
+    
+
+      <section class="ftco-section">
+         <div class="container">
+            
+       
+         <div class="row justify-content-rigth">
+         <div class="col-md-12 " style="margin-top:50px">
+        
+        
+         <div class="row no-gutters  ">
+         <div class="col-md-7">
+         <div class="contact-wrap w-100 p-md-5 p-4">
+            {% include 'cetus/error.html' %}
+            {% if form.non_field_errors %}
+            <ul class='form-errors'>
+              {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          <div class="login"  >
+            <h3 class="mb-4">Login</a><a  href="{% url 'index' %}" style="float: right;"><i style="font-size:24px" class="fa">&#xf00d;</i></a></h3>
+            <div id="form-message-warning" class="mb-4"></div>
+            
+            <form  method="POST" id="contactForm" name="contactForm" class="contactForm" onsubmit="verify()" action="{% url 'login' %}" method="post">
+               {% csrf_token %}
+            <div class="row">
+      
+            <div class="col-md-6">
+            <div class="form-group">
+            <label class="label" for="email">Email Address</label><span class="red">*</span>
+            <input type="text" class="form-control" name="Email" id="email" placeholder="Email">
+            </div>
+            </div>
+            <div class="col-md-6">
+            <div class="form-group">
+            <label class="label" for="subject">Password</label><span class="red">*</span>
+            <input type="Password" class="form-control" name="Password" id="password" placeholder="Password">
+            </div>
+            </div>
+            <div class="col-md-12">
+            <div class="form-group">
+            <input type="submit" value="Login" class="btn btn-primary">
+            <a class="login" id="register"  href="{% url 'register' %}" style="cursor: pointer;"><br>Click here to Register Your Self</a>
+
+            </div> 
+           </form>
+           <div>   
+           </div>
+          </div>
+         </div>
+         </div>  
+
+            
+         </section>
+
+
+
+   </body>
+</html>

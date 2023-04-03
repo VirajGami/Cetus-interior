@@ -1,0 +1,192 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+      <script type="text/javascript" src="https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.6/src/jquery.ez-plus.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      
+      <title>CETUS</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+      <!-- fevicon -->
+      <link rel="icon" href="{% static 'assets/images/fevicon.png' %}" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="{% static 'assets/css/jquery.mCustomScrollbar.min.css' %}">
+      <link rel="icon" type="image/x-icon" href="{% static 'assets/images/favicon.ico' %}">
+
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css}">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+      <link rel="stylesoeet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   </head>
+   <body>
+      <!-- header section start -->
+      <div class="header_section">
+         <div class="">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <a class="logo" href="{% url 'index' %}"><img src="{% static 'assets/images/logo2.jpeg' %}"></a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                     </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'brochurelist' %}">brochure</a>
+                     </li> 
+                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'product' %}">Products</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                     </li>
+                  </ul>
+                  {% if Customer_session_nm is not None %}
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" style="color:021239;font-size:18px;font-family:Trebuchet MS" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true"  aria-expanded="false"><img  width="50px"  src="{% static 'assets/images/user.png' %}"> &nbsp {{ name }}</a>
+                     <div class="dropdown-menu">
+                     <a class="dropdown-item" href="{% url 'myrequirement' %}">My Requirement</a>
+                     <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                     </div>
+                   </li>
+                   {% endif %}
+                  {% comment %} <div class="search_icon"><a href="#"><img src="{% static 'assets/images/search-icon.png' %}"><br>VB</a></div> {% endcomment %}
+               </div>
+            </nav>
+         </div>
+         
+         
+      </div>
+{% block body %}
+      
+{% endblock %}
+
+<div class="copyright_section">
+   
+      <!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  
+ 
+   <!-- Section: Links  -->
+   <section class="pt-2">
+     <div class=" text-center text-md-start mt-2">
+       <!-- Grid row -->
+       <div class="row mt-3">
+         <!-- Grid column -->
+         <div class="col-md-3 col-lg-4  col-xl-3 mx-auto mb-4">
+           <!-- Content -->
+           <h6 class="text-uppercase fw-bold mb-2">
+            <a class=""  href="{% url 'index' %}"><img style="width: 50%;" src="{% static 'assets/images/logo2.jpeg' %}"></a>
+           </h6>
+           <span >see event images:</span><br><a href="{% url 'images' %}"><i style="font-size: 25px;color: #731110;cursor: pointer;" class="fa fa-image"></i></a><br>
+            <span>Get connected with us on social networks:</span>  <br/>      
+            <a href="" style="font-size: 25px;" class="me-4 text-reset">
+              <i class="fab fa-facebook-f "></i>
+            </a>
+            <a href="https://instagram.com/cetusinteriorproducts77?igshid=YmMyMTA2M2Y=" target="_blank" style="font-size: 25px;" class="me-4 text-reset">
+              <i class="fab fa-instagram"></i>
+            </a>
+          
+         </div>
+         <!-- Grid column -->
+ 
+         <!-- Grid column -->
+         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+           <!-- Links -->
+           <h4 class="text-uppercase fw-bold mb-0 pb-0">
+            Useful Links
+            <hr/>
+           </h4>
+           <p>
+            <a class="text-reset" href="{% url 'index' %}">Home</a>
+           </p>
+         <p>
+            <a class="text-reset" href="{% url 'about' %}">About</a>
+         </p>
+          <p>
+            <a class="text-reset" href="{% url 'brochurelist' %}">brochure</a>
+          </p> 
+         <p>
+            <a class="text-reset" href="{% url 'product' %}">Products</a>
+         </p>
+         <P>
+            <a class="text-reset" href="{% url 'contact' %}">Contact Us</a>
+         </p>
+         </div>
+         <!-- Grid column -->
+ 
+         
+ 
+         <!-- Grid column -->
+         <div class="col-md-6 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+           <!-- Links -->
+           <h4 class="text-uppercase fw-bold mb-4">Contact <hr/></h4>
+           <p style="color: #731110;"><i class="fas fa-home me-3"></i> Rasul Para, Opp. Old Toll Tax, NH-8B, Rajkot,<br>
+            Gujarat (INDIA)</p>
+           <p  style="color: #731110;">
+             <i class="fas fa-envelope me-3"></i>
+             <a href="mailto:cetusinterior@gmail.com">cetusinterior@gmail.com</a>
+           </p>
+           <p style="color: #731110;"><i class="fas fa-phone me-3"></i><a href="tel://9924999295"> + 91 99249	99295</a></p>
+         </div>
+         <!-- Grid column -->
+       </div>
+       <!-- Grid row -->
+     </div>
+   </section>
+   <!-- Section: Links  -->
+ 
+   <!-- Copyright -->
+   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+     © 2023 Copyright:
+     <a class="text-reset fw-bold" href="{% url 'index' %}">Cetus Interior Product</a>
+   </div>
+   <!-- Copyright -->
+ </footer>
+ <!-- Footer -->
+    </div>
+
+ <!-- copyright section end -->    
+ <!-- Javascript files-->
+ <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+
+ <script src="{% static 'assets/js/popper.min.js' %}"></script>
+ <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+ <script src="{% static 'assets/js/jquery-3.0.0.min.js' %}"></script>
+ <script src="{% static 'assets/js/plugin.js' %}%"></script>
+ <!-- sidebar -->
+ <script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+ <script src="{% static 'assets/js/custom.js' %}"></script>
+ <!-- javascript --> 
+ <script src="{% static 'assets/js/owl.carousel.js' %}"></script>
+ <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+ </body>
+ </html>

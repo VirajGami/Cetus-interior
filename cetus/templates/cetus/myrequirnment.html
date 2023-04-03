@@ -1,0 +1,61 @@
+{% extends 'cetus/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+ 
+    {% block head %}
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {% endblock %}
+   </head>
+   <body>
+    
+      {% block body %}
+      
+      
+        
+      {% if no %}
+      <div class="container">
+      <div   style="font-size:35px;font-family:Century Gothic">Your <span style="color:#731110">History</span></div>
+        
+        <div >
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Date</th>
+            <th scope="col">ModelNo</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            
+        {% for r in requirement %}
+                    <tr>    
+                       
+                        <th scope="row">{{forloop.counter}}</th>                        
+                        <td>{{r.date}}</td>
+                        <td>{{r.Modelno}}</td>
+                        <td><a href="{% url 'deleterequirement' r.id  %}"><button type="button"  class="btn btn-danger">Delete</button></a></td>
+                    </tr>
+        {% endfor %} 
+                             
+               
+        
+         </tbody>
+      </table>
+    </div>
+      {% else %}
+      <div style="padding-bottom:480px">
+      <span style="font-size:35px;padding-left:550px;">NO Requirement Found  <a href="{% url 'sendrequirnment' %}" class="elementor-button">Send Requirnment</a><a></span>
+      </div>  
+        {% endif %}
+      
+    </div>
+      {% endblock %}
+      
+   </body>
+</html>

@@ -1,0 +1,325 @@
+{% extends 'cetus/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      {% block head %}
+      {% endblock %}
+    
+      
+       
+       </head>
+   <body>
+      {% block body %}
+         <div class="fixed-btn">
+         <a href="{% url 'sendrequirnment' %}" class="elementor-button">Send Requirnment</a><a>
+         </a></div>
+      
+      <!-- header section end --> 
+      <!-- banner section start --> 
+ 
+<script>
+   {% for message in messages %}
+   alert('{{ message }}');
+   {% endfor %}
+</script>
+      <div class="banner_section layout_padding">
+         <div id="main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container">
+                     <h1 class="banner_taital">CRAFT and INNOVATION<br />are the ENCOURAGEMENTS</h1>
+                     <div class="btn_main">
+                        <div class="more_bt"><a href="{% url 'contact' %}">Contact us</a></div>
+                        <div class="contact_bt active"><a href="#sub">get a Newsletter</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                     <h1 class="banner_taital">to EXPLORE  DIFFERENT<br> aesthetic  choicese</h1>
+                     <div class="btn_main">
+                        <div class="more_bt"><a href="{% url 'contact' %}">Contact us</a></div>
+                        <div class="contact_bt active"><a href="#sub">get a Newsletter</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                     <h1 class="banner_taital">EXPECT the <br />EXTRAORDINARY</h1>
+                     <div class="btn_main">
+                        <div class="more_bt"><a href="{% url 'contact' %}">Contact us</a></div>
+                        <div class="contact_bt active"><a href="#sub">get a Newsletter</a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+            <i class="fa fa-left"><img src="{% static 'assets/images/left-icon.png' %}"></i>
+            </a>
+            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+            <i class="fa fa-right"><img src="{% static 'assets/images/right-icon.png' %}"></i>
+            </a>
+         </div>
+      </div>
+      <!-- banner section end -->
+    
+      <!-- about section start -->
+     
+      <div class="about_section layout_padding" style="background:#731110">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-6">
+                  <div class=""><img style="margin-left:0px;" src="{% static 'assets/images/e2.png' %}"></div>
+               </div>
+               <div class="col-md-6">
+                  <div class="about_main">
+                     <div class="about_taital" style="color:white;font-family:Questrial, sans-serif">About <span style="font-family: MV Boli;"> CETUS</span></div>
+                     <p class="about_text" style="color:white"><span style="font-weight: 700;">CETUS INTERIOR PRODUCT</span> is an endeavour of a group of farsighted entrepreneurs. Backed with sound knowledge and rich experience of the architectural hardware industry, we have established Cetus Interior to set new standards of quality in the industry.</p>
+                     <div class="about_bt"><a href="{% url 'about' %}">About More</a></div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- about section end -->
+      <!-- service section start -->
+      {% comment %} <div class="services_section layout_padding">
+         <div class="container">
+            <div class="services_taital">Our Services</div>
+            <p class="services_text">It is a long established fact that a reader will be distracted by the readable</p>
+         </div>
+         <div class="services_section_2 layout_padding">
+            <div class="container-fluid padding_0">
+               <div class="box_main">
+                  {% for i in cat %}
+                 <div class="dot col-md 4">
+
+                 </div>
+                 {% endfor %}
+              
+                        
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div> {% endcomment %}
+      <!-- service section end -->
+
+  
+
+
+      <!-- project section start -->
+    <div class="project_section layout_padding">
+         <div class="container">
+            <h1 class="newarrival" > <a style="color:#021239">New</new> <span style="color:#731110">Product</span> </h1>
+            <div class="project_menu">
+              
+            </div>
+         </div>
+         <div class="project_section_2 layout_padding">
+            <div class="container-fluid">
+               <div class="row">
+                 
+                 <div class="hover01 column">
+                  {% for product in product_list %}
+                  <div><a style="cursor: pointer;" href={% url 'product' %}>
+                     <figure><img style="width: 450px;" class="figure" src="{{ product.ProductImage.url }}" /></figure>
+                     <span>{{product.ModelNo}}</span></a>
+                   </div>
+                   {% endfor %}
+                 </div> 
+         
+                 
+               </div>
+            </div>
+         </div>
+      </div> 
+ 
+      <!-- project section end -->
+      <!-- philosophy section start -->
+      <div class="philosophy_section layout_padding">
+         <div class="container">
+            <h1 class="philosophy_taital">Our Philosophy</h1>
+            <p class="philosophy_text">It is a long established fact that a reader will be distracted by the readable</p>
+         </div>
+         <div class="philosophy_section_2 layout_padding">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-md-6 padding_0">
+                     <div class="philosophy_box_main">
+                        <div class="philosophy_box">
+                           <div class="philosophy_left">
+                              <h1 class="number_text">01</h1>
+                           </div>
+                           <div class="philosophy_right">
+                              <h3 class="quick_text">Quick in Response</h3>
+                           </div>
+                        </div>
+                        <div class="philosophy_box">
+                           <div class="philosophy_left">
+                              <h1 class="number_text">02</h1>
+                           </div>
+                           <div class="philosophy_right">
+                              <h3 class="quick_text">Satisfaction Guarantee</h3>
+                           </div>
+                        </div>
+                        <div class="philosophy_box">
+                           <div class="philosophy_left">
+                              <h1 class="number_text">03</h1>
+                           </div>
+                           <div class="philosophy_right">
+                              <h3 class="quick_text">Expert & Professional</h3>
+                           </div>
+                        </div>
+                        <div class="philosophy_box">
+                           <div class="philosophy_left">
+                              <h1 class="number_text">04</h1>
+                           </div>
+                           <div class="philosophy_right">
+                              <h3 class="quick_text">Professional Approach</h3>
+                           </div>
+                        </div>
+                        <div class="philosophy_box">
+                           <div class="philosophy_left">
+                              <h1 class="number_text">05</h1>
+                           </div>
+                           <div class="philosophy_right">
+                              <h3 class="quick_text">High Quality Product</h3>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-5 d-flex align-items-stretch">
+                     <div class="info-wrap w-100 p-5 img" style="background-image: url({%static 'assets/images/slide_03.jpg' %});">
+                     </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- philosophy section end -->
+      <!-- project section start -->
+      <!-- project section start -->
+      <!-- <div class="project_section_3 layout_padding">
+         <div class="container">
+            <h1 class="project_taital">Our Features Projects</h1>
+            <p class="philosophy_text">It is a long established fact that a reader will be distracted by the readable</p>
+         </div>
+         <div class="project_section_2 layout_padding">
+            <div id="my_slider" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-sm-4">
+                              <div>
+                                 <img src="images/img-4.png" class="image_6">
+                                 <h4 class="reader_text">Reader will be <br>distracted by the readable</h4>
+                              </div>
+                           </div>
+                           <div class="col-sm-4">
+                              <div>
+                                 <img src="images/img-5.png" class="image_6">
+                                 <h4 class="reader_text">Reader will be <br>distracted by the readable</h4>
+                              </div>
+                           </div>
+                           <div class="col-sm-4">
+                              <div>
+                                 <img src="images/img-6.png" class="image_6">
+                                 <h4 class="reader_text">Reader will be <br>distracted by the readable</h4>
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                     </div>
+                  </div>
+                  
+                 
+               <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="next">
+               <i class="fa fa-arrow-left"></i>
+               </a>
+               <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+               <i class="fa fa-arrow-right"></i>
+               </a>
+            </div>
+         </div>
+      </div> -->
+      
+       
+      <!-- project section end -->
+         
+     
+      <!-- project section end -->
+     
+      <!-- newslatter section start -->
+      <div class="newslatter_section layout_padding mt-5 mb-5" id="sub">
+         <div class="container col-md-12" style="display: flex;flex-direction:row">
+            <div class="newslatter_main col-md-8">
+               <h1 class="looking_text">Subscribe For Newsletter<br><span style="font:20px 'Humnst777LtBTLight', Arial, Helvetica, sans-serif">To receive our Newsletter please subscribe here and  keep updated
+with latest products.</span></h1>               
+            </div>
+            <div class="quote_bt col-md-4"> 
+               <form name="form" action="{% url 'subscribe' %}" method="post" onsubmit="return valEmail(this)">
+                  {% csrf_token %}   
+               {% if email %}
+               <input class="" name="txtEmail" style="font-size:14px" value="{{email}}" type="email" placeholder="Sign Up for Newsletter"> 
+               {% else %}
+               <input class="" name="txtEmail"  style="font-size:14px" type="email" placeholder="Sign Up for Newsletter">  
+               {% endif %}
+               <a><input type="submit" value="Subscribe" class="btn btn-primary"></a> 
+            </form></div>
+         </div>
+      </div>
+      <!-- newslatter section end -->
+      
+      <!-- footer section start -->
+      {% comment %} <div class="footer_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-4 col-sm-12">
+                  <div class="map_text"><a href="#"><img src="{% static 'assets/images/map-icon.png' %}" class="image_main"><span class="padding_left_10">No.123 Chalingt Gates, Supper market New York</span></a></div>
+               </div>
+               <div class="col-lg-4 col-sm-12">
+                  <div class="map_text"><a href="#"><img src="{% static 'assets/images/call-icon.png' %}" class="image_main"><span class="padding_left_10">(+71 7986543234)</span></a></div>
+               </div>
+               <div class="col-lg-4 col-sm-12">
+                  <div class="map_text"><a href="#"><img src="{% static 'assets/images/mail-icon.png' %}" class="image_main"><span class="padding_left_10">demo@gmail.com</span></a></div>
+               </div>
+            </div>
+         </div>
+      </div> {% endcomment %}
+      <!-- footer section end -->
+      <!-- copyright section start -->
+
+      {% endblock %} 
+      <script type="text/javascript" >
+         {
+           function valEmail()
+           {
+           var uname=document.form;
+            //var uname=documenr.getElementID("txtname");
+            var alpha=/^[a-zA-Z ]+$/;	
+            var num=/^[0-9  -]+$/;
+           if(uname.txtEmail.value=="")
+            {
+               alert("Email Name is Required");
+               document.form.txtEmail.focus();
+               return (false);
+            }
+             var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+           
+            if(reg.test(uname.txtEmail.value) == false) {
+               alert('Invalid Email Address');
+              document.form.txtEmail.focus();
+               return false;
+            }
+           }
+         }
+         </script>
+
+      
+   </body>
+</html>

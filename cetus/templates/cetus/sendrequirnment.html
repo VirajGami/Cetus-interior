@@ -1,0 +1,217 @@
+{% extends 'cetus/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      {% block head %}
+      {% endblock %}
+
+      
+       
+       </head>
+   <body>
+      {% block body %}
+      
+      <div class="content  pb-0 ">
+        <div class="container">
+        <div class="row justify-content-center">
+        <div class="col-md-10">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <h3 class="heading">Send Your <span style="color:#731110">Requirnment</span> </h3>
+                <p><img src="{% static 'assets/images/1.jpg' %}" alt="Image"  class="img-fluid"></p>
+            </div>
+            {% include 'cetus/error.html' %}
+            {% if form.non_field_errors %}
+            <ul class='form-errors'>
+              {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+            
+        <div class="col-md-6">
+        <form class="mb-5" method="post" id="contactForm" action="{% url 'requirnmentsubmit' %}" name="contactForm" novalidate="novalidate">
+            (<span class="red">*</span>) Compulsory fields
+                    <br>
+            {% csrf_token %}
+           
+        Name:<span class="red">*</span>
+        <div class="row">
+        <div class="col-md-12 form-group">
+        <input type="text" class="form-control" value="{{ name }}" name="name" id="name" placeholder="Your Name" >
+            
+    </div>
+        </div>
+        Company:<span class="red">*</span>
+        <div class="row">
+        <div class="col-md-12 form-group">
+        <input type="text" class="form-control" name="company" id="company" placeholder="Company">
+        </div>
+        </div>
+        Designation<span class="red">*</span>
+        <div class="row">
+            <div class="col-md-12 form-group">
+            <input type="text" class="form-control" name="designation" id="designation" placeholder="Designation">
+            </div>
+        </div>
+        Company Address:<span class="red">*</span>
+        <div class="row">
+            <div class="col-md-12 form-group">
+            <textarea type="text" class="form-control" cols="30" rows="5" name="address" id="caddress" placeholder="Company Address"></textarea>
+            </div>
+        </div>
+        City:<span class="red">*</span>
+        <div class="row">
+            <div class="col-md-12 form-group">
+            <input type="text" class="form-control" name="city" id="city" placeholder="City">
+            </div>
+        </div>
+        Pincode:<span class="red">*</span>
+        <div class="row">
+            <div class="col-md-12 form-group">
+            <input type="text" class="form-control" name="pincode" id="pincode" placeholder="Pincode">
+            </div>
+        </div>
+        State:<span class="red">*</span>
+        <div class="row">
+            <div class="col-md-12 form-group">
+            <input type="text" class="form-control" name="state" id="state" placeholder="State">
+            </div>
+        </div>
+        
+    </div>
+    <div class="col-md-6 mt-4" >
+       
+        Country:<span class="red">*</span>
+        <div class="row">
+        <div class="col-md-12 form-group">
+        <select id="country" name="country" class="form-control" style="height: 50px;">
+            <option value="0" selected="selected">Select Country / Region</option>
+            <option value="Algeria">Algeria</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Australia">Australia</option>
+            <option value="Austria">Austria</option>
+            <option value="Belgium">Belgium</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Canada">Canada</option>
+            <option value="Chile">Chile</option>
+            <option value="China (Group)">China (Group)</option>
+            <option value="China (Electronics)">China (Electronics)</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Czech">Czech</option>
+            <option value="Denmark">Denmark</option>
+            <option value="Estonia">Estonia</option>
+            <option value="Europe">Europe</option>
+            <option value="Finland">Finland</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Hong Kong">Hong Kong</option>
+            <option value="Hungary">Hungary</option>
+            <option value="India">India</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Italy">Italy</option>
+            <option value="Japan">Japan</option>
+            <option value="Kazakhstan">Kazakhstan</option>
+            <option value="Korea (Group)">Korea (Group)</option>
+            <option value="Korea (Electronics)">Korea (Electronics)</option>
+            <option value="Latvia">Latvia</option>
+            <option value="Lithuania">Lithuania</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Middle East">Middle East</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="Panama">Panama</option>
+            <option value="Peru">Peru</option>
+            <option value="Philippines">Philippines</option>
+            <option value="Poland">Poland</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Russia">Russia</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Slovakia">Slovakia</option>
+            <option value="Slovakia">Slovakia</option>
+            <option value="Spain">Spain</option>
+            <option value="Sweden">Sweden</option>
+            <option value="Taiwan">Taiwan</option>
+            <option value="Thailand">Thailand</option>
+            <option value="Turkey">Turkey</option>
+            <option value="United States">United States</option>
+            <option value="Ukraine">Ukraine</option>
+            <option value="Uzbekistan">Uzbekistan</option>
+            <option value="Vietnam">Vietnam</option>
+        </select>
+        </div>
+        </div>
+        Mobile:<span class="red">*</span>
+        <div class="row">
+            <div class="col-md-12 form-group">
+            <input type="text" class="form-control" name="mobile" id="mobile" placeholder="Mobile">
+            </div>
+        </div>
+        Telephone:<span class="red">*</span>
+        <div class="row">
+            <div class="col-md-12 form-group">
+            <input type="text" class="form-control" name="telephone" id="telephone" placeholder="telephone" >
+            </div>
+        </div>
+        Email:<span class="red">*</span>
+        <div class="row">
+            <div class="col-md-12 form-group">
+            <input type="email" class="form-control" value="{{ email }}" name="email" id="email" placeholder="Email" >
+            </div>
+        </div>
+       Model No.:<span class="red">*</span>
+        <div class="row">
+        <div class="col-md-12 form-group">
+        <textarea class="form-control" name="modelno" id="modelno" cols="30" rows="5" placeholder="Write Your Required Product Model No."></textarea>
+        </div>
+        </div>
+        Enter the code:<span class="red">*</span>
+        <div class="row">
+        <div class="col-md-12 form-group">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="50"><canvas id="myCanvas" width="220px" height="35" style="background-color: beige;color: black;padding-top: 15px;"> {{img}} </canvas></td>
+                  <td>  &nbsp;&nbsp;</td>  
+                  <td><input type="text"  id="txtcaptcha" name="txtcaptcha" style="height: 50px;width: 220px;" class="width_01" /></td>
+                </tr>         
+            </table>        
+            </div>
+        </div>
+
+        <div class="col-md-12 form-group">
+            <input type="submit" value="Send Requirnment" style="width: 450px;" class="btn btn-primary  rounded-0 py-2 my-3 px-4">
+            <span class="submitting"></span>
+            </div>
+       </div> 
+   
+                
+                
+     
+        </div>
+    </div>
+        </form>
+        <div id="form-message-warning mt-4"></div>
+        <div id="form-message-success">
+        Your Requirnment was sent, thank you!
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            ctx.font = "25px Comic Sans MS";
+            ctx.fillStyle = "red";
+            ctx.textAlign = "center";
+            ctx.fillText("{{img}}", canvas.width/2, canvas.height/2);
+        </script>
+        </div>
+
+      {% endblock %} 
+
+   
+   </body>
+</html>

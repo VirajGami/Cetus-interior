@@ -1,0 +1,51 @@
+{% extends 'cetus/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      {% block head %}
+      {% endblock %}
+   </head>
+   <body>
+      {% block body %}
+      <div class="fixed-btn">
+         <a href="{% url 'sendrequirnment' %}" class="elementor-button">Send Requirnment</a><a>
+         </a></div>
+      <!-- project section start -->
+      <div class="project_section layout_padding">
+         <div class="container">
+            <h1 class="project_taital">Our Products </h1>
+            <div class="project_menu">
+               <ul>
+                  <li class="active"><a href="{% url 'product' %}">All</a></li>
+                  {% for cat in cat_list %}
+                  <li ><a href="{% url 'productbycategory' cat.id %}">{{ cat.CategoryName}}</a></li>
+                  {% endfor %}
+               </ul>
+            </div>
+         </div>
+         <div class="project_section_2 layout_padding">
+            <div class="container-fluid">
+               <div class="row">
+                 
+                 <div class="hover01 column">
+                  {% for product in product_list %}
+                  <div><a style="cursor: pointer;" href={% url 'productdetail' product.id %}>
+                     <figure><img style="width: 450px;" class="figure" src="{{ product.ProductImage.url }}" /></figure>
+                     <span>{{product.ModelNo}}</span></a>
+                   </div>
+                   {% endfor %}
+                 </div> 
+         
+                 
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <!-- project section end -->
+     
+      <!-- project section end -->
+      {% endblock %} 
+   </body>
+</html>

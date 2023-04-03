@@ -1,0 +1,54 @@
+{% extends 'cetus/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      {% block head %}
+      {% endblock %}
+   </head>
+   <body>
+      {% block body %}
+      <div class="fixed-btn">
+         <a href="{% url 'sendrequirnment' %}" class="elementor-button">Send Requirnment</a><a>
+         </a></div>
+      <!-- about section start -->
+      <div class="about_section layout_padding">
+         <div class="container-fluid">
+            <div class="row">
+               <div class=" col-md-8">
+                  <div class="about_main">
+                     <div class="about_taital">About <span style="color:#731110">CETUS</span></div>
+                     <div class="pad_05">
+                        <b style="color:#731110">CETUS INTERIOR PRODUCT</b> is an endeavour of a group of farsighted entrepreneurs. Backed with sound knowledge and rich experience of the architectural hardware industry, we have established Cetus Interior to set new standards of quality in the industry.
+                        <br /><br />
+                        Established in the year 2011, we have chalked out longs term plans and goals for the company. Currently we are focusing on the segments of curtain brackets, curtain  support and Interior Product such as Wall Clock,wall showpiece ect. as  well as  related accessories.
+                        &nbsp; With a penchant for precision and an eye for aesthetics, we have already set the market ablaze with our offerings.<br /><br />
+                        <p style=" width: 100%; float: left;font-size: 30px;color: #191919; text-transform: uppercase; font-weight: 700;margin-left: 0;" >Our <span style="color:#021239">Culture</span></p>
+                        Cetus Interior Product began with a corporate culture that is committed to innovation, creativity, trust and respect for all. A culture that encourages both individual and professional growth. A culture that is guided by five core values.<br /><br />
+                        <p style=" width: 100%; float: left;font-size: 30px;color: #191919; text-transform: uppercase; font-weight: 700;margin-left: 0;" >Our Core  <span style="color:#021239">Purpose</span></p>
+
+                        Providing the road map to reach our goals is a core purpose that is powerful,&nbsp; compelling and virtually limitless in scope. &nbsp; By pursuing our core purpose, our leadership inspires others - our employees, dealers and customers - to improve, do their best and be successful<br /><br />
+                        <b>Integrity :</b> Delivering and Expecting the highest ethical conduct.<br />
+                        <b>Service :</b> Exceeding expectations by paying attention to details.<br />
+                        <b>Innovation : </b> Identifying and Seizing opportunities through creative solutions.<br />
+                        <b>Teamwork :</b> Supporting each other to enhance our collective strengths.<br />
+                        <b>Excellence :</b> Passionately dedicated to being the best.<br />
+                        </div>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="about_img"><img style="margin-left:15px;margin-top:120px" src="{% static 'assets/images/p2.png' %}"></div>
+               </div>
+               {% comment %} <img style="width:350px;margin-left:50px" src="{% static 'assets/images/p6.png' %}">
+               <img style="width:350px;" src="{% static 'assets/images/p7.png' %}">
+               <img style="width:350px;" src="{% static 'assets/images/p9.png' %}">
+               <img style="width:350px;" src="{% static 'assets/images/p8.png' %}"> {% endcomment %}
+
+            </div>
+         </div>
+      </div>
+      <!-- about section end -->
+     
+      {% endblock %} 
+   </body>
+</html>

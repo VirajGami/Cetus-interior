@@ -1,0 +1,28 @@
+{% extends 'cetus/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      {% block head %}
+      {% endblock %}
+   </head>
+   <body>
+      {% block body %}
+      <div class="fixed-btn ">
+         <a href="{% url 'sendrequirnment' %}" class="elementor-button">Send Requirnment</a><a>
+         </a></div>
+      <div class="pad_05 " >
+            {% comment %} <ul class="list_01" style="padding-top: 200px;padding-left: 50px;padding-bottom: 50px;" >
+                {% for i in data %}
+                
+                <li style="width: 287px;padding-right: 5px;margin-bottom: 5px;border-right: 5px solid #731110;margin-bottom: 30px;"><a href="{{ i.pdf.url }}" target="_blank"><img src="{{ i.image.url }}" style="height: fit-content;"  alt=""><br>
+            <b><span >{{ i.name }}</span></b></a></li>
+            
+            {% endfor %}
+            </ul> {% endcomment %}
+        
+        </div>
+    </div>
+      {% endblock %} 
+   </body>
+</html>
